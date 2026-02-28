@@ -1,0 +1,17 @@
+/*
+ Theme Name:   Moira Child Theme
+ Theme URI:    https://moira.com/
+ Description:  Tema Hijo para Moira
+ Author:       Brandon Vidal
+ Author URI:   https://brandonvidal.com/
+ Template:     twentytwentyfive
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         editorial, functional food, clean, terracotta
+*/
+
+body {
+    background-color: #F2EFDC; /* Crema de fondo global */
+    color: #5E5C59; /* Gris para textos */
+}
