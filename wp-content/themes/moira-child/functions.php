@@ -110,3 +110,12 @@ function moira_custom_js_scripts()
     true
   );
 }
+
+// 404 REDIRECCION PERSONALIZADA
+add_action( 'template_redirect', 'moira_redirect_404_to_home' );
+function moira_redirect_404_to_home() {
+    if ( is_404() ) {
+        wp_safe_redirect( home_url(), 301 ); // Redirección permanente
+        exit;
+    }
+}
