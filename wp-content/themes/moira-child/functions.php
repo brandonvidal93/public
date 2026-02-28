@@ -82,17 +82,15 @@ add_action('init', 'moira_custom_login_slug');
 
 function moira_custom_login_slug()
 {
-  // Definimos la URL secreta
+  // URL del login
   $secret_slug = 'entrada-prueba';
   $requested_uri = $_SERVER['REQUEST_URI'];
 
-  // Si alguien intenta entrar a wp-login.php directamente
   if (strpos($requested_uri, 'wp-login.php') !== false && !isset($_GET['moira_access'])) {
     wp_safe_redirect(home_url());
     exit;
   }
 
-  // Si el usuario accede a /entrada-prueba, le damos acceso al login real
   if (untrailingslashit($requested_uri) === home_url($secret_slug, 'relative')) {
     wp_safe_redirect(site_url('wp-login.php?moira_access=true'));
     exit;
@@ -106,7 +104,7 @@ function moira_custom_js_scripts()
 {
   wp_enqueue_script(
     'moira-optimization-script',
-    get_stylesheet_directory_uri() . '/assets/js/moira-script.js',
+    get_stylesheet_directory_uri() . '/js/moira-scripts.js',
     array(),
     '1.0.0',
     true
